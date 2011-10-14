@@ -57,6 +57,15 @@ $(document).ready(function() {
 	//$('.cycle').css("display", "block");
 });
 
+$(document).ready(function() {
+    $('.slideshow').cycle({
+speedIn:  2000,
+	    speedOut: 2000,
+	   timeout:   10000,
+		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+	});
+$('.slideshow').css("display", "block");
+});
 
 /**
  * --------------------------------------------------------------------
@@ -180,3 +189,31 @@ jQuery.fn.pngFix = function(settings) {
 		$("button, input:submit").button();
 		
 		});
+
+
+//date picker on menu page
+
+$(document).ready(function() {
+		$( "#datepicker" ).datepicker({
+			dateFormat : 'DD, d MM, yy',
+                        onSelect : function(dateText, inst)
+                        {
+                            var epoch = $.datepicker.formatDate('@', $(this).datepicker('getDate')) / 1000;
+
+                            $('#alternate').val(epoch);
+                        }
+                        });
+
+
+                        $( "#datepicker2" ).datepicker({
+			dateFormat : 'DD, d MM, yy',
+                        onSelect : function(dateText, inst)
+                        {
+                            var epoch = $.datepicker.formatDate('@', $(this).datepicker('getDate')) / 1000;
+
+                            $('#alternate2').val(epoch);
+                        }
+                        });
+
+
+});

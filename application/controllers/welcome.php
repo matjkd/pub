@@ -10,30 +10,71 @@ class Welcome extends MY_Controller {
         
 	public function index()
 	{
-		redirect('welcome/home', 'refresh');
-	}
+		$segment_active = $this->uri->segment(2);
+		if ($segment_active!=NULL)
+			{
+				$data['menu'] = $this->uri->segment(2); 
+			}
+		else
+			{
+				$data['menu'] = 'home';
+			}
 
-        function home()
-	{
+		$data['content'] = $this->content_model->get_content($data['menu']);
+		$data['captcha'] = $this->captcha_model->initiate_captcha();
+		foreach($data['content'] as $row):
 
+			$data['title'] = $row->title;
+			$data['sidebox'] = $row->sidebox;
+
+		endforeach;
+                   $data['sidebar'] = "sidebox/side";
+		$data['main_content'] = "global/content";
+		$data['cats'] = $this->products_model->get_cats();
+		$data['products'] = $this->products_model->get_all_products();
+		$data['section2'] = 'global/links';
 		if($this->session->flashdata('message'))
 			{
 				$data['message'] = $this->session->flashdata('message');
 			}
 
-		$data['menu'] = 'home';
-		$data['title'] = $this->config_company_name;
-		$data['content'] = $this->content_model->get_content($data['menu']);
-		foreach($data['content'] as $row):
-			$data['sidebox'] = $row->sidebox;
-		endforeach;
+		$data['slideshow'] = 'header/slideshow';
+		$this->load->vars($data);
+		$this->load->view('template/main');
+	}
 
+        function home()
+	{
+
+		$segment_active = $this->uri->segment(1);
+		if ($segment_active!=NULL)
+			{
+				$data['menu'] = $this->uri->segment(1);
+			}
+		else
+			{
+				$data['menu'] = 'home';
+			}
+
+		$data['content'] = $this->content_model->get_content($data['menu']);
+		$data['captcha'] = $this->captcha_model->initiate_captcha();
+		foreach($data['content'] as $row):
+
+			$data['title'] = $row->title;
+			$data['sidebox'] = $row->sidebox;
+
+		endforeach;
+                $data['sidebar'] = "sidebox/side";
 		$data['main_content'] = "global/content";
 		$data['cats'] = $this->products_model->get_cats();
 		$data['products'] = $this->products_model->get_all_products();
-
 		$data['section2'] = 'global/links';
+		if($this->session->flashdata('message'))
+			{
+				$data['message'] = $this->session->flashdata('message');
+			}
 
+		$data['slideshow'] = 'header/slideshow';
 		$this->load->vars($data);
 		$this->load->view('template/main');
 	}
@@ -81,7 +122,7 @@ class Welcome extends MY_Controller {
 		$id = 'login';
 		$data['content'] =	$this->content_model->get_content($id);
 		$data['main_content'] = "user/login_form";
-		$data['title'] = "Login to Gamasco";
+		$data['title'] = "Login to Eagle";
 
 		$data['page'] = "login";
 		$this->load->vars($data);

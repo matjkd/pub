@@ -39,6 +39,13 @@
 */
 
 $route['default_controller'] = "welcome";
+$route['about'] = '/welcome/home';
+$route['menu'] = '/welcome/home';
+$route['gallery'] = '/welcome/home';
+$route['events'] = '/welcome/home';
+$route['contact'] = '/welcome/home';
+$route['login'] = '/welcome/login';
+
 $route['404_override'] = '';
 
 

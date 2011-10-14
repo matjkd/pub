@@ -16,13 +16,14 @@
   <link rel="apple-touch-icon" href="<?=base_url()?>apple-touch-icon.png">
 
 <!-- Load google fonts-->
-<link  href="http://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css" >
+<link href='http://fonts.googleapis.com/css?family=Spinnaker' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
 
   <!-- CSS : implied media="all" -->
     <link rel="stylesheet" href="<?=base_url()?>css/custom-theme/jquery-ui-1.8.9.custom.css">
   <link rel="stylesheet" href="<?=base_url()?>css/grid.css">
   <link rel="stylesheet" href="<?=base_url()?>css/style.css?v=2">
-   <link rel="stylesheet" href="<?=base_url()?>css/template.css">
+   <link rel="stylesheet" href="<?=base_url()?>css/eagle/template.css">
   
   <link rel="stylesheet" href="<?=base_url()?>css/mscarousel.css">
   <link rel="stylesheet" media="handheld" href="<?=base_url()?>css/handheld.css?v=2">  

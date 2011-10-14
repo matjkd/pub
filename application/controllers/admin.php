@@ -8,7 +8,7 @@ class Admin extends MY_Controller {
 		$this->load->library(array('encrypt', 'form_validation'));	
 		$this->is_logged_in();
 		$this->load->model('content_model');
-	
+	 $this->load->model('menu_model');
 	
 	}
 	function index()
@@ -141,6 +141,8 @@ function edit_pro()
 		$this->professionals_model->edit_pro($id);
 		redirect ("admin/editpro/$id");
 	}
+
+
 function edit_practice()
 	{
 		
@@ -226,6 +228,60 @@ function submit_news()
 		$this->load->vars($data);
 		$this->load->view('template');
 	}
+
+        function add_menu()
+        {
+            $data['main_content'] = "admin/add_menu";
+		$data['cats'] = $this->products_model->get_cats();
+		$data['products'] = $this->products_model->get_all_products();
+		$data['section2'] = 'global/links';
+		if($this->session->flashdata('message'))
+			{
+				$data['message'] = $this->session->flashdata('message');
+			}
+
+		$data['slideshow'] = 'header/slideshow';
+		$this->load->vars($data);
+		$this->load->view('template/main');
+
+        }
+        function view_menus()
+        {
+                $data['main_content'] = "admin/view_menus";
+		$data['page'] ='practices';
+		$data['menus'] =	$this->menu_model->get_menus();
+
+		$data['slideshow'] = 'header/slideshow';
+		$this->load->vars($data);
+		$this->load->view('template/main');
+        }
+        function add_new_menu()
+        {
+            $this->menu_model->add_menu();
+                    return;
+        }
+        function update_menu()
+        {
+           $this->menu_model->update_menu();
+            return;
+        }
+
+        function edit_menu($id)
+        {
+            $data['main_content'] = "admin/edit_menu";
+            $data['menudata'] = $this->menu_model->get_menu($id);
+		$data['cats'] = $this->products_model->get_cats();
+		$data['products'] = $this->products_model->get_all_products();
+		$data['section2'] = 'global/links';
+		if($this->session->flashdata('message'))
+			{
+				$data['message'] = $this->session->flashdata('message');
+			}
+
+		$data['slideshow'] = 'header/slideshow';
+		$this->load->vars($data);
+		$this->load->view('template/main');
+        }
 	function assign_practice()
 	{
 	$segment_active = $this->uri->segment(3);
