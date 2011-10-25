@@ -13,7 +13,11 @@ class Admin extends MY_Controller {
 	}
 	function index()
 	{
-		redirect('welcome/login', 'refresh');
+		$data['main_content'] = "admin/dashboard";
+		$data['pages'] = $this->content_model->get_all_content();
+			
+		$this->load->vars($data);
+		$this->load->view('template/main');
 	}
 	function content()
 	{
@@ -262,8 +266,9 @@ function submit_news()
         }
         function update_menu()
         {
-           $this->menu_model->update_menu();
-            return;
+          echo $this->input->post('published');
+            $this->menu_model->update_menu();
+          //  return;
         }
 
         function edit_menu($id)

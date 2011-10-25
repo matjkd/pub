@@ -2,11 +2,15 @@ body {
  background:#262626;
 
 }
+
+@font-face { font-family: 'spinnaker2';
+src: url('/fonts/Spinnaker-Regular.ttf');
+}
 p {
     margin-bottom:8px;
 }
 h1 {
-  font-family: 'Spinnaker', serif;
+  font-family: 'spinnaker2', serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -58,7 +62,7 @@ margin-right:auto;
     margin-left:auto;
 width:960px;
 text-align: center;
-font-family: 'Spinnaker', sans-serif;
+font-family: 'spinnaker2', sans-serif;
 text-transform: uppercase;
 font-size: 14px;
 padding-top: 4px;
@@ -112,7 +116,7 @@ margin:0 auto;
     border-bottom: solid 3px #4a5b63;
 margin:10px;
 padding:10px;
-font-family: 'Spinnaker', sans-serif;
+
 color: #333333;
-font-size: 14px;
+
 }

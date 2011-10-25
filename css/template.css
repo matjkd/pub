@@ -3,7 +3,11 @@ body {
 
 }
 
+@font-face { font-family: 'spinnaker';
+src: url('/fonts/Spinnaker-Regular.ttf');
+}
 
+.classname{ font:24px normal normal BrushScriptStdMedium;}
 h1 {
   font-family: 'Raleway', serif;
   font-size: 20px;

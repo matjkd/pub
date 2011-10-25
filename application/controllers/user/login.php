@@ -21,9 +21,13 @@ function Login()
 	
 	
 	}
+         function _prep_password($password)
+	{
+	    return sha1($password.$this->config->item('encryption_key'));
+	}
+
 	function validate_credentials()
 	{
-		$this->session->set_flashdata('message', "test.");		
 		$this->load->model('membership_model');
 		$query = $this->membership_model->validate();
 		
@@ -71,9 +75,9 @@ function Login()
 	
 	function register()
 	{
-		$data['main'] = '/user/register';
+		$data['main_content'] = '/user/register';
 		$this->load->vars($data);
-		$this->load->view('template');
+		$this->load->view('template/main');
 		//$this->template->load('template', 'user/register');
 	}
 	
@@ -92,9 +96,9 @@ function Login()
 		
 		if($this->form_validation->run() == FALSE)
 		{
-			$data['main'] = 'user/register';
+		$data['main_content'] = 'login/create_user';
 		$this->load->vars($data);
-		$this->load->view('template');
+		$this->load->view('template/main');
 			//$this->template->load('template', 'user/register');
 		}
 		

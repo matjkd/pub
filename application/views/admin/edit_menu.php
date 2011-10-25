@@ -14,11 +14,17 @@ Start Date:<br/>
 <br/>
 End Date<br/>
 <input type="text" id="datepicker2" name="enddate" value="<?=$enddate?>"/>
-<input type="hidden" id="alternate2" name="enddate_unix" value="<?=$row->enddate?>"/>
+<input type="hidden" id="alternate2" name="enddate_unix" value="<?=$row->enddate?>"/><br/>
+
+
+<?php if($row->dates == 1) { $checked1=TRUE; } else { $checked1=FALSE;} ?>
+<?=form_checkbox('dates', '1', $checked1)?> Only availabe between above dates<br/>
 
 <textarea cols=65 rows=20 name="content" id="content" class='wymeditor'><?=$row->menu?></textarea>
-Published:<br/>
-<input type="checkbox" name="published" id="published" value="accept" <?php if($row->published == 1) { echo " checked='checked'"; }?>  style="margin:10px" />
+
+<?php if($row->published == 1) { $checked=TRUE; } else { $checked=FALSE;} ?>
+<?=form_checkbox('published', '1', $checked)?> Published<br/>
+
 <br/>
 
 

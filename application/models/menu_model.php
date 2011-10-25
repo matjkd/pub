@@ -45,7 +45,7 @@ class Menu_model extends CI_Model {
     }
     function get_menus()
     {
-
+$this->db->order_by('order', 'asc');
 		$query = $this->db->get('menus');
 		if($query->num_rows > 0);
 			{

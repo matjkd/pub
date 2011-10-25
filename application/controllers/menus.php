@@ -27,5 +27,36 @@ echo "hello";
                 $this->load->vars($data);
 		$this->load->view('template/main');
         }
+           public function list_menus()
+        {
+             
+
+
+				$data['menu'] = 'Menu';
+
+
+		$data['content'] = $this->content_model->get_content($data['menu']);
+
+		foreach($data['content'] as $row):
+
+			$data['title'] = $row->title;
+			$data['sidebox'] = $row->sidebox;
+
+		endforeach;
+                $data['sidebar'] = "sidebox/side";
+                $data['menus'] =	$this->menu_model->get_menus();
+		$data['main_content'] = "menus/list_menus";
+		$data['cats'] = $this->products_model->get_cats();
+		$data['products'] = $this->products_model->get_all_products();
+		$data['section2'] = 'global/links';
+		if($this->session->flashdata('message'))
+			{
+				$data['message'] = $this->session->flashdata('message');
+			}
+
+		$data['slideshow'] = 'header/slideshow';
+		$this->load->vars($data);
+		$this->load->view('template/main');
+        }
 
 }

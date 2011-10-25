@@ -42,7 +42,16 @@ class Content_model extends CI_Model {
 		return $update;
 		}
 		
-	
+	function get_all_content()
+                {
+                                $query = $this->db->get('content');
+		if($query->num_rows > 0);
+			{
+				return $query->result();
+			}
+
+                }
+                
 	function get_all_products()
 	{
 			

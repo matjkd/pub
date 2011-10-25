@@ -40,7 +40,7 @@
 
 $route['default_controller'] = "welcome";
 $route['about'] = '/welcome/home';
-$route['menu'] = '/welcome/home';
+$route['menu'] = 'menus/list_menus';
 $route['gallery'] = '/welcome/home';
 $route['events'] = '/welcome/home';
 $route['contact'] = '/welcome/home';
