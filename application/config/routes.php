@@ -46,6 +46,8 @@ $route['events'] = '/welcome/home';
 $route['contact'] = '/welcome/home';
 $route['login'] = '/welcome/login';
 
+
+
 $route['404_override'] = '';
 
 

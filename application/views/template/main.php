@@ -63,7 +63,8 @@
       </div>
       
       <div class="container_24" id="footer">
-
+          <?=$this->load->view('global/footer_menu')?>
+<?=$this->load->view('global/social_icons')?>
 
       </div>
       

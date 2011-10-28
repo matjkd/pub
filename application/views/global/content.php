@@ -1,6 +1,6 @@
 
 <?php foreach($content as $row):?>
-<h1><?=$row->title?></h1>
+<h1><img src="<?=base_url()?>images/titles/<?=$row->menu?>.png"/></h1>
 
 <?php 
 $is_logged_in = $this->session->userdata('is_logged_in');
@@ -17,8 +17,8 @@ else {
 }?>
 
 
-<?php  $body = str_replace("THERMAPAD", "<strong>THERMAPAD</strong>", "$body");?>
-<?php  $body = str_replace("The GMS Company", "<strong>The GMS Company</strong>", "$body");?>
+<?php  $body = str_replace("The Eagle", "<strong>The Eagle</strong>", "$body");?>
+<?php  $body = str_replace("THE EAGLE", "<strong>THE EAGLE</strong>", "$body");?>
 <?=$body?>
 
 <?php endforeach;?>
