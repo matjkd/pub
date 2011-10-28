@@ -1,6 +1,6 @@
-system/application/config/database.php
-system/application/config/config.php
-system/application/libraries/MY_Controller.php
+application/config/database.php
+application/config/config.php
+application/core/MY_Controller.php
 nbproject/
 .htaccess
 
