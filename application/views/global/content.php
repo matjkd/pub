@@ -1,6 +1,7 @@
 
 <?php foreach($content as $row):?>
-<h1><img src="<?=base_url()?>images/titles/<?=$row->menu?>.png"/></h1>
+
+<h1><img src="<?=base_url()?>images/titles/<?=$config_theme?>/<?=$row->menu?>.png"/></h1>
 
 <?php 
 $is_logged_in = $this->session->userdata('is_logged_in');

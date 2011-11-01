@@ -1,0 +1,25 @@
+<style>
+   .roundabout-holder { padding: 0; height: 210px; list-style: none; width:740px; margin:0px auto; }
+   .roundabout-moveable-item { 
+      height: 200px; 
+      width: 400px; 
+      cursor: pointer;
+      background-color: #777;
+      border: 3px solid #ffffff;
+   }
+   .roundabout-in-focus { cursor: auto; }
+   .roundabout-moveable-item img {
+				width: 100%;
+			}
+</style>
+<div class="slide_area" >
+      
+    <ul id="myRoundabout" >
+   <li><img src="/images/template/flyerdirect/slides/slide1.jpg" /></li>
+   <li><img src="/images/template/flyerdirect/slides/slide2.jpg" /></li>
+   <li><img src="/images/template/flyerdirect/slides/slide3.jpg" /></li>
+   
+</ul>
+	
+          
+        </div>

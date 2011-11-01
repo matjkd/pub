@@ -1,0 +1,1 @@
+<img src="/images/template/flyerdirect/sidebox/london2012.png"/>

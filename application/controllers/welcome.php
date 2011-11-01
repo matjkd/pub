@@ -28,8 +28,8 @@ class Welcome extends MY_Controller {
 			$data['sidebox'] = $row->sidebox;
 
 		endforeach;
-                   $data['sidebar'] = "sidebox/side";
-		$data['main_content'] = "global/content";
+                                $data['sidebar'] = "sidebox/side";
+		$data['main_content'] = "global/".$this->config_theme."/content";
 		$data['cats'] = $this->products_model->get_cats();
 		$data['products'] = $this->products_model->get_all_products();
 		$data['section2'] = 'global/links';
@@ -65,7 +65,7 @@ class Welcome extends MY_Controller {
 
 		endforeach;
                 $data['sidebar'] = "sidebox/side";
-		$data['main_content'] = "global/content";
+		$data['main_content'] = "global/".$this->config_theme."/content";
 		$data['cats'] = $this->products_model->get_cats();
 		$data['products'] = $this->products_model->get_all_products();
 		$data['section2'] = 'global/links';
@@ -98,7 +98,7 @@ class Welcome extends MY_Controller {
 			$data['sidebox'] = $row->sidebox;
 
 		endforeach;
-		$data['main_content'] = "global/content";
+		$data['main_content'] = "global/".$this->config_theme."/content";
 		$data['cats'] = $this->products_model->get_cats();
 		$data['products'] = $this->products_model->get_all_products();
 		$data['section2'] = 'global/links';
