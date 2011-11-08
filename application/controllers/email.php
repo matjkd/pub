@@ -53,7 +53,7 @@ class Email extends My_Controller {
 					$config_email = $this->config_email;
 					$config_company_name = $this->config_company_name;	
 		
-					//$this->postmark->from($config_email, $config_company_name);
+					 $this->postmark->from($config_email, $config_company_name);
 		
 		 			//echo "from($config_email, $config_company_name)<br/>";	
 		

@@ -1,7 +1,7 @@
 <style>
-   .roundabout-holder { padding: 0; height: 210px; list-style: none; width:740px; margin:0px auto; }
+   .roundabout-holder { padding: 0; height: 310px; list-style: none; width:740px; margin:0px auto; }
    .roundabout-moveable-item { 
-      height: 200px; 
+      height: 300px; 
       width: 400px; 
       cursor: pointer;
       background-color: #777;
@@ -12,7 +12,7 @@
 				width: 100%;
 			}
 </style>
-<div class="slide_area" >
+<div class="slide_area" style="display:none;" >
       
     <ul id="myRoundabout" >
    <li><img src="/images/template/flyerdirect/slides/slide1.jpg" /></li>

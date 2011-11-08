@@ -27,11 +27,15 @@
     		
     	</div>
         <div style="clear:both"></div>
+      
          <div id="menutop">
-             <!-- Logo here -->
-    	
+             
+             <div style="width:960px; margin:0 auto;">
+    	<div style="float:left;">
+            <a href="#">Tracking</a>
+             </div>
   <?=$this->load->view('global/flyer/menu')?>
-
+             </div> 
          </div>
         
         <?=$this->load->view('slideshow/flyer/slideshow')?>
@@ -46,20 +50,21 @@
 
             <div id="textcontainer">
          <?php
-         if(!isset($sidebar))   {
-             $mainsize ="grid_18";
+         if(isset($sidebox) && $sidebox != NULL)   {
+             $mainsize ="grid_12";
          }
          else
          {
-             $mainsize ="grid_12";
+             $mainsize ="grid_17";
+         }
              ?>
 
            <div class="grid_6">
 
-            <?=$this->load->view($sidebox)?>
+            <?=$this->load->view('sidebox/flyer')?>
           </div >
 
-         <?php } ?>
+    
         
 
 
@@ -68,11 +73,15 @@
               
 
           </div>
+          
+          <?php if(isset($sidebox) && $sidebox != NULL) { ?>
                 <div class="grid_6">
-              <?=$this->load->view('sidebox/flyer/london2012')?>
+                    
+              <?=$this->load->view($sidebox)?>
               
 
           </div>
+          <?php } ?>
 
          <div class="clear"></div>
 </div>
@@ -80,10 +89,12 @@
       </div>
       
       <div class="container_24" id="footer">
-          
-        
+          <div class="grid_18">
+         <?=$this->load->view('global/flyer/links')?>
+          </div>
+          <div class="grid_6">
 <?=$this->load->view('global/flyer/social_icons')?>
-
+          </div>
       </div>
       
       
@@ -92,11 +103,12 @@
     
      <div  id="backfooter" >
          <div class="container_24" >
-          <div class="grid_10">
-                            
+          <div class="grid_14">
+           <?=$this->load->view('global/flyer/seo_menu')?>
+                   
                         </div>
 
-                        <div class="grid_14">
+                        <div class="grid_10">
   <?=$this->load->view('global/flyer/footer_menu')?>
                         </div>
              

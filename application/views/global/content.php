@@ -7,7 +7,7 @@
 $is_logged_in = $this->session->userdata('is_logged_in');
 		if(!isset($is_logged_in) || $is_logged_in == true)
 		{
-			echo "<a href='".base_url()."admin/edit/".$row->menu."'>edit this page</a><br/>";
+			echo "<a href='".base_url()."admin/edit/".$row->content_id."'>Edit this page</a><br/>";
 		}	
 
 ?>

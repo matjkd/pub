@@ -2,7 +2,7 @@ body {
  background: url('/template/flyerdirect/mainback.jpg') repeat-x #f1e7d5;
 line-height:22px;
 font-family:Verdana, Geneva, sans-serif;
-font-size:14px;
+font-size:12px;
 }
 
 @font-face { font-family: 'spinnaker2';
@@ -10,7 +10,7 @@ src: url('/fonts/Spinnaker-Regular.ttf');
 }
 p {
     margin-bottom:8px;
-    text-align: justify;
+    text-align: left;
 }
 #container {
     
@@ -27,11 +27,11 @@ position:relative;
 h1 {
 font-family:Verdana, Geneva, sans-serif;
   font-size: 20px;
-  font-style: normal;
+  font-style: normal; 
   font-weight: 700;
   text-shadow: none;
   text-decoration: none;
-  text-transform: uppercase;
+  
   letter-spacing: 0em;
   word-spacing: 0em;
   line-height: 1.2;
@@ -39,7 +39,7 @@ font-family:Verdana, Geneva, sans-serif;
 }
 #header {
 
-height:350px;
+height:450px;
 width:100%;
 
 display:block;
@@ -94,7 +94,7 @@ margin-right:auto;
 
 width:100%;
 height:31px;
-text-align: left;
+text-align: right;
 font-family: sans-serif;
 text-transform: capitalize;
 font-weight: bolder;
@@ -111,7 +111,7 @@ background: url('/images/template/flyerdirect/menuback.jpg') repeat-x #cd0a0a;
 position:relative;
 }
 #menutop ul {
-    width:960px;
+   
         margin-right:auto;
     margin-left:auto;
 }
@@ -127,6 +127,13 @@ color: #ffffff;
 .socialicons {
     padding-top:20px;
     float:right; position:relative; padding-right:10px;
+}
+.linkicons {
+    padding-top:20px;
+    float:left; position:relative; padding-right:10px;
+}
+.linkicons img {
+    margin-left:20px; 
 }
 .footermenu {
     float:left; 
@@ -157,7 +164,7 @@ border-right:1px #292929;
 
 .slide_area {
     width:960px;
-    height:215px;
+    height:325px;
     margin: 10px auto;
 position:relative;
 
@@ -190,4 +197,34 @@ padding:10px;
 
 color: #333333;
 
+}
+
+#seo_links {
+    float:left; 
+  padding-top:20px;
+    position:relative; 
+    padding-left:0px;
+ 
+        font-size: 0.8em;
+        line-height: 1.6em;
+}
+
+#seo_links ul {
+    width: 560px;
+      margin-left:0px;
+}
+#seo_links ul li {
+   float:left;
+   width:185px;
+   list-style: none;
+}
+br
+{
+    
+    clear:left;
+}
+#seo_links ul li a{
+   display:block;
+   width:185px;
+   text-decoration: none;
 }

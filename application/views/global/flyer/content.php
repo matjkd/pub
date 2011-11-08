@@ -10,7 +10,7 @@
 $is_logged_in = $this->session->userdata('is_logged_in');
 		if(!isset($is_logged_in) || $is_logged_in == true)
 		{
-			echo "<a href='".base_url()."admin/edit/".$row->menu."'>edit this page</a><br/>";
+			echo "<a href='".base_url()."admin/edit/".$row->content_id."'>edit this page</a><br/>";
 		}	
 
 ?>
@@ -21,8 +21,8 @@ else {
 }?>
 
 
-<?php  $body = str_replace("Flyerdirect", "<strong>Flyerdirect</strong>", "$body");?>
-<?php  $body = str_replace("THE EAGLE", "<strong>THE EAGLE</strong>", "$body");?>
+<?php  $body = str_replace("FlyerDirect", "<strong>FlyerDirect</strong>", "$body");?>
+<?php  $body = str_replace("Flyer Direct", "<strong>Flyer Direct</strong>", "$body");?>
 <?=$body?>
 
 <?php endforeach;?>

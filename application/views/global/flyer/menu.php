@@ -3,7 +3,7 @@
     		<li><?=anchor('/', 'home')?></li>
                 <li><?=anchor('/services', 'services')?></li>
                   <li><?=anchor('/about', 'about us')?></li>
-                  <li><?=anchor('/social', 'social')?></li>
+                  <li><?=anchor('/social', 'charity')?></li>
                     <li><?=anchor('/jobs', 'jobs')?></li>
                   <li><?=anchor('/contact', 'contact')?></li>
                   
@@ -20,3 +20,4 @@
                 ?>
                    
     		</ul>
+
