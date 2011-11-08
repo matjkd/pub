@@ -29,9 +29,9 @@ class MY_Controller extends CI_Controller {
 			$config_data['config_theme'] = $row->company_theme;
 			$config_data['config_logo'] = $row->company_logo;
 			$config_data['config_doc_root'] = $row->doc_root;
-			
+			$config_data['maps_api'] = $row->mapsapi;
 			//age of company
-			$startdate = 2011;
+			$startdate = $row->startyear;
 			$currentyear = date('Y');
 			$age = $currentyear - $startdate;
 			$config_data['age'] = $age;
