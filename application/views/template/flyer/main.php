@@ -32,7 +32,7 @@
              
              <div style="width:960px; margin:0 auto;">
     	<div style="float:left;">
-            <a href="#">Tracking</a>
+            <a href="http://mytrackpanel.com/trackit247/">Tracking</a>
              </div>
   <?=$this->load->view('global/flyer/menu')?>
              </div> 
@@ -69,6 +69,7 @@
 
 
           <div class="<?=$mainsize?>">
+                 <?=$this->load->view('global/alert')?>
               <?=$this->load->view($main_content)?>
               
 
