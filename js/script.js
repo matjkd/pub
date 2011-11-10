@@ -11,29 +11,29 @@
 
 
 
-})(this.jQuery);
+    })(this.jQuery);
 
 
 
 // usage: log('inside coolFunc',this,arguments);
 // paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
 window.log = function(){
-  log.history = log.history || [];   // store logs to an array for reference
-  log.history.push(arguments);
-  if(this.console){
-    console.log( Array.prototype.slice.call(arguments) );
-  }
+    log.history = log.history || [];   // store logs to an array for reference
+    log.history.push(arguments);
+    if(this.console){
+        console.log( Array.prototype.slice.call(arguments) );
+    }
 };
 
 
 
 // catch all document.write() calls
 (function(doc){
-  var write = doc.write;
-  doc.write = function(q){ 
-    log('document.write(): ',arguments); 
-    if (/docwriteregexwhitelist/.test(q)) write.apply(doc,arguments);  
-  };
+    var write = doc.write;
+    doc.write = function(q){ 
+        log('document.write(): ',arguments); 
+        if (/docwriteregexwhitelist/.test(q)) write.apply(doc,arguments);  
+    };
 })(document);
 
 
@@ -49,22 +49,22 @@ jQuery(function() {
 //jquery cycle
 $(document).ready(function() {
     $('.cycle').cycle({
-		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-		speedIn:  2000, 
-	    speedOut: 2000, 
-	   timeout:   10000
-	});
-	//$('.cycle').css("display", "block");
+        fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+        speedIn:  2000, 
+        speedOut: 2000, 
+        timeout:   10000
+    });
+//$('.cycle').css("display", "block");
 });
 
 $(document).ready(function() {
     $('.slideshow').cycle({
-speedIn:  2000,
-	    speedOut: 2000,
-	   timeout:   10000,
-		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-	});
-$('.slideshow').css("display", "block");
+        speedIn:  2000,
+        speedOut: 2000,
+        timeout:   10000,
+        fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+    });
+    $('.slideshow').css("display", "block");
 });
 
 /**
@@ -102,82 +102,82 @@ $('.slideshow').css("display", "block");
 
 (function($) {
 
-jQuery.fn.pngFix = function(settings) {
+    jQuery.fn.pngFix = function(settings) {
 
-	// Settings
-	settings = jQuery.extend({
-		blankgif: 'blank.gif'
-	}, settings);
+        // Settings
+        settings = jQuery.extend({
+            blankgif: 'blank.gif'
+        }, settings);
 
-	var ie55 = (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) == 4 && navigator.appVersion.indexOf("MSIE 5.5") != -1);
-	var ie6 = (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) == 4 && navigator.appVersion.indexOf("MSIE 6.0") != -1);
+        var ie55 = (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) == 4 && navigator.appVersion.indexOf("MSIE 5.5") != -1);
+        var ie6 = (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) == 4 && navigator.appVersion.indexOf("MSIE 6.0") != -1);
 
-	if (jQuery.browser.msie && (ie55 || ie6)) {
+        if (jQuery.browser.msie && (ie55 || ie6)) {
 
-		//fix images with png-source
-		jQuery(this).find("img[src$=.png]").each(function() {
+            //fix images with png-source
+            jQuery(this).find("img[src$=.png]").each(function() {
 
-			jQuery(this).attr('width',jQuery(this).width());
-			jQuery(this).attr('height',jQuery(this).height());
+                jQuery(this).attr('width',jQuery(this).width());
+                jQuery(this).attr('height',jQuery(this).height());
 
-			var prevStyle = '';
-			var strNewHTML = '';
-			var imgId = (jQuery(this).attr('id')) ? 'id="' + jQuery(this).attr('id') + '" ' : '';
-			var imgClass = (jQuery(this).attr('class')) ? 'class="' + jQuery(this).attr('class') + '" ' : '';
-			var imgTitle = (jQuery(this).attr('title')) ? 'title="' + jQuery(this).attr('title') + '" ' : '';
-			var imgAlt = (jQuery(this).attr('alt')) ? 'alt="' + jQuery(this).attr('alt') + '" ' : '';
-			var imgAlign = (jQuery(this).attr('align')) ? 'float:' + jQuery(this).attr('align') + ';' : '';
-			var imgHand = (jQuery(this).parent().attr('href')) ? 'cursor:hand;' : '';
-			if (this.style.border) {
-				prevStyle += 'border:'+this.style.border+';';
-				this.style.border = '';
-			}
-			if (this.style.padding) {
-				prevStyle += 'padding:'+this.style.padding+';';
-				this.style.padding = '';
-			}
-			if (this.style.margin) {
-				prevStyle += 'margin:'+this.style.margin+';';
-				this.style.margin = '';
-			}
-			var imgStyle = (this.style.cssText);
+                var prevStyle = '';
+                var strNewHTML = '';
+                var imgId = (jQuery(this).attr('id')) ? 'id="' + jQuery(this).attr('id') + '" ' : '';
+                var imgClass = (jQuery(this).attr('class')) ? 'class="' + jQuery(this).attr('class') + '" ' : '';
+                var imgTitle = (jQuery(this).attr('title')) ? 'title="' + jQuery(this).attr('title') + '" ' : '';
+                var imgAlt = (jQuery(this).attr('alt')) ? 'alt="' + jQuery(this).attr('alt') + '" ' : '';
+                var imgAlign = (jQuery(this).attr('align')) ? 'float:' + jQuery(this).attr('align') + ';' : '';
+                var imgHand = (jQuery(this).parent().attr('href')) ? 'cursor:hand;' : '';
+                if (this.style.border) {
+                    prevStyle += 'border:'+this.style.border+';';
+                    this.style.border = '';
+                }
+                if (this.style.padding) {
+                    prevStyle += 'padding:'+this.style.padding+';';
+                    this.style.padding = '';
+                }
+                if (this.style.margin) {
+                    prevStyle += 'margin:'+this.style.margin+';';
+                    this.style.margin = '';
+                }
+                var imgStyle = (this.style.cssText);
 
-			strNewHTML += '<span '+imgId+imgClass+imgTitle+imgAlt;
-			strNewHTML += 'style="position:relative;white-space:pre-line;display:inline-block;background:transparent;'+imgAlign+imgHand;
-			strNewHTML += 'width:' + jQuery(this).width() + 'px;' + 'height:' + jQuery(this).height() + 'px;';
-			strNewHTML += 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader' + '(src=\'' + jQuery(this).attr('src') + '\', sizingMethod=\'scale\');';
-			strNewHTML += imgStyle+'"></span>';
-			if (prevStyle != ''){
-				strNewHTML = '<span style="position:relative;display:inline-block;'+prevStyle+imgHand+'width:' + jQuery(this).width() + 'px;' + 'height:' + jQuery(this).height() + 'px;'+'">' + strNewHTML + '</span>';
-			}
+                strNewHTML += '<span '+imgId+imgClass+imgTitle+imgAlt;
+                strNewHTML += 'style="position:relative;white-space:pre-line;display:inline-block;background:transparent;'+imgAlign+imgHand;
+                strNewHTML += 'width:' + jQuery(this).width() + 'px;' + 'height:' + jQuery(this).height() + 'px;';
+                strNewHTML += 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader' + '(src=\'' + jQuery(this).attr('src') + '\', sizingMethod=\'scale\');';
+                strNewHTML += imgStyle+'"></span>';
+                if (prevStyle != ''){
+                    strNewHTML = '<span style="position:relative;display:inline-block;'+prevStyle+imgHand+'width:' + jQuery(this).width() + 'px;' + 'height:' + jQuery(this).height() + 'px;'+'">' + strNewHTML + '</span>';
+                }
 
-			jQuery(this).hide();
-			jQuery(this).after(strNewHTML);
+                jQuery(this).hide();
+                jQuery(this).after(strNewHTML);
 
-		});
+            });
 
-		// fix css background pngs
-		jQuery(this).find("*").each(function(){
-			var bgIMG = jQuery(this).css('background-image');
-			if(bgIMG.indexOf(".png")!=-1){
-				var iebg = bgIMG.split('url("')[1].split('")')[0];
-				jQuery(this).css('background-image', 'none');
-				jQuery(this).get(0).runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + iebg + "',sizingMethod='scale')";
-			}
-		});
+            // fix css background pngs
+            jQuery(this).find("*").each(function(){
+                var bgIMG = jQuery(this).css('background-image');
+                if(bgIMG.indexOf(".png")!=-1){
+                    var iebg = bgIMG.split('url("')[1].split('")')[0];
+                    jQuery(this).css('background-image', 'none');
+                    jQuery(this).get(0).runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + iebg + "',sizingMethod='scale')";
+                }
+            });
 		
-		//fix input with png-source
-		jQuery(this).find("input[src$=.png]").each(function() {
-			var bgIMG = jQuery(this).attr('src');
-			jQuery(this).get(0).runtimeStyle.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader' + '(src=\'' + bgIMG + '\', sizingMethod=\'scale\');';
-   		jQuery(this).attr('src', settings.blankgif)
-		});
+            //fix input with png-source
+            jQuery(this).find("input[src$=.png]").each(function() {
+                var bgIMG = jQuery(this).attr('src');
+                jQuery(this).get(0).runtimeStyle.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader' + '(src=\'' + bgIMG + '\', sizingMethod=\'scale\');';
+                jQuery(this).attr('src', settings.blankgif)
+            });
 	
-	}
+        }
 	
-	return jQuery;
+        return jQuery;
 
-};
+    };
 
 
 
@@ -185,35 +185,39 @@ jQuery.fn.pngFix = function(settings) {
 })(jQuery);
 
 //jquery ui buttons
-	$(function() {
-		$("button, input:submit").button();
+$(function() {
+    $("button, input:submit").button();
 		
-		});
+});
 
 
 //date picker on menu page
 
 $(document).ready(function() {
-		$( "#datepicker" ).datepicker({
-			dateFormat : 'DD, d MM, yy',
-                        onSelect : function(dateText, inst)
-                        {
-                            var epoch = $.datepicker.formatDate('@', $(this).datepicker('getDate')) / 1000;
+    $( "#datepicker" ).datepicker({
+        dateFormat : 'DD, d MM, yy',
+        onSelect : function(dateText, inst)
+        {
+            var epoch = $.datepicker.formatDate('@', $(this).datepicker('getDate')) / 1000;
 
-                            $('#alternate').val(epoch);
-                        }
-                        });
-
-
-                        $( "#datepicker2" ).datepicker({
-			dateFormat : 'DD, d MM, yy',
-                        onSelect : function(dateText, inst)
-                        {
-                            var epoch = $.datepicker.formatDate('@', $(this).datepicker('getDate')) / 1000;
-
-                            $('#alternate2').val(epoch);
-                        }
-                        });
+            $('#alternate').val(epoch);
+        }
+    });
 
 
+    $( "#datepicker2" ).datepicker({
+        dateFormat : 'DD, d MM, yy',
+        onSelect : function(dateText, inst)
+        {
+            var epoch = $.datepicker.formatDate('@', $(this).datepicker('getDate')) / 1000;
+
+            $('#alternate2').val(epoch);
+        }
+    });
+
+
+});
+
+$(function(){
+    $("#paginate").pagination();
 });
