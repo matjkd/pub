@@ -6,72 +6,70 @@
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-<head>
- 
-<?=$this->load->view('global/header')?>
+    <head>
 
-</head>
+        <?= $this->load->view('global/header') ?>
 
-<body>
+    </head>
 
-  <div id="container">
-  	<div class="container_24" id="header">
+    <body>
 
-    	<!-- Logo here -->
-    	<div id="logo">
-    		<img width="389px" height="88px" src="<?=base_url()?>images/template/eaglelogo.png" alt="Logo" />
-    	</div>
-         <div id="menutop">
-  <?=$this->load->view('global/menu')?>
+        <div id="container">
+            <div class="container_24" id="header">
 
-         </div>
-    	</div>
+                <!-- Logo here -->
+                <div id="logo">
+                    <img width="389px" height="88px" src="<?= base_url() ?>images/template/eaglelogo.png" alt="Logo" />
+                </div>
+                <div id="menutop">
+                    <?= $this->load->view('global/menu') ?>
 
-      <div id="bodycontainer" class="container_24">
-         <?=$this->load->view('slideshow/slideshow')?>
-            <div class="clear"></div>
+                </div>
+            </div>
 
-            <div id="textcontainer">
-         <?php
-         if(!isset($sidebar))   {
-             $mainsize ="grid_24";
-         }
-         else
-         {
-             $mainsize ="grid_14";
-             ?>
+            <div id="bodycontainer" class="container_24">
+                <?= $this->load->view('slideshow/slideshow') ?>
+                <div class="clear"></div>
 
-           <div class="grid_10">
+                <div id="textcontainer">
+                    <?php
+                    if (!isset($sidebar)) {
+                        $mainsize = "grid_24";
+                    } else {
+                        $mainsize = "grid_14";
+                        ?>
 
-            <?=$this->load->view($sidebar)?>
-          </div >
+                        <div class="grid_10">
 
-         <?php } ?>
-        
+    <?= $this->load->view($sidebar) ?>
+                        </div >
+
+<?php } ?>
 
 
-          <div class="<?=$mainsize?>">
-              <?=$this->load->view($main_content)?>
-              
 
-          </div>
-            
+                    <div class="<?= $mainsize ?>">
+<?= $this->load->view($main_content) ?>
 
-         <div class="clear"></div>
-</div>
 
-      </div>
-      
-      <div class="container_24" id="footer">
-          <?=$this->load->view('global/footer_menu')?>
-<?=$this->load->view('global/social_icons')?>
+                    </div>
 
-      </div>
-      
-  </div> 
 
-<!--! end of #container -->
-<?=$this->load->view('global/footer')?>
-  
-</body>
+                    <div class="clear"></div>
+                </div>
+
+            </div>
+
+            <div class="container_24" id="footer">
+<?= $this->load->view('global/footer_menu') ?>
+                <?= $this->load->view('global/social_icons') ?>
+
+            </div>
+
+        </div> 
+
+        <!--! end of #container -->
+<?= $this->load->view('global/footer') ?>
+
+    </body>
 </html>
