@@ -22,14 +22,15 @@ class Welcome extends MY_Controller {
 
 		$data['content'] = $this->content_model->get_content($data['menu']);
 		$data['captcha'] = $this->captcha_model->initiate_captcha();
+                $data['seo_links'] = $this->content_model->get_seo_links();
 		foreach($data['content'] as $row):
 
 			$data['title'] = $row->title;
 			$data['sidebox'] = $row->sidebox;
 
 		endforeach;
-                   $data['sidebar'] = "sidebox/side";
-		$data['main_content'] = "global/content";
+                                $data['sidebar'] = "sidebox/side";
+		$data['main_content'] = "global/".$this->config_theme."/content";
 		$data['cats'] = $this->products_model->get_cats();
 		$data['products'] = $this->products_model->get_all_products();
 		$data['section2'] = 'global/links';
@@ -46,14 +47,14 @@ class Welcome extends MY_Controller {
         function home()
 	{
 
-		$segment_active = $this->uri->segment(1);
+		$segment_active = $this->uri->segment(3);
 		if ($segment_active!=NULL)
 			{
-				$data['menu'] = $this->uri->segment(1);
+				$data['menu'] = $this->uri->segment(3);
 			}
 		else
 			{
-				$data['menu'] = 'home';
+				$data['menu'] = $this->uri->segment(1);
 			}
 
 		$data['content'] = $this->content_model->get_content($data['menu']);
@@ -65,10 +66,11 @@ class Welcome extends MY_Controller {
 
 		endforeach;
                 $data['sidebar'] = "sidebox/side";
-		$data['main_content'] = "global/content";
-		$data['cats'] = $this->products_model->get_cats();
-		$data['products'] = $this->products_model->get_all_products();
+		$data['main_content'] = "global/".$this->config_theme."/content";
+		//$data['cats'] = $this->products_model->get_cats();
+		//$data['products'] = $this->products_model->get_all_products();
 		$data['section2'] = 'global/links';
+                $data['seo_links'] = $this->content_model->get_seo_links();
 		if($this->session->flashdata('message'))
 			{
 				$data['message'] = $this->session->flashdata('message');
@@ -98,7 +100,7 @@ class Welcome extends MY_Controller {
 			$data['sidebox'] = $row->sidebox;
 
 		endforeach;
-		$data['main_content'] = "global/content";
+		$data['main_content'] = "global/".$this->config_theme."/content";
 		$data['cats'] = $this->products_model->get_cats();
 		$data['products'] = $this->products_model->get_all_products();
 		$data['section2'] = 'global/links';

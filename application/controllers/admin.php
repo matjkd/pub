@@ -15,7 +15,7 @@ class Admin extends MY_Controller {
 	{
 		$data['main_content'] = "admin/dashboard";
 		$data['pages'] = $this->content_model->get_all_content();
-			
+			 $data['seo_links'] = $this->content_model->get_seo_links();
 		$this->load->vars($data);
 		$this->load->view('template/main');
 	}
@@ -44,8 +44,8 @@ class Admin extends MY_Controller {
 		$id = $this->uri->segment(3);
 		$data['menu'] = $id;
 		$data['page'] = $id;
-		$data['content'] =	$this->content_model->get_content($id);
-		
+		$data['content'] =	$this->content_model->get_content_id($id);
+		 $data['seo_links'] = $this->content_model->get_seo_links();
 		$data['main_content'] = "admin/edit_content";
 		
 		
@@ -71,10 +71,19 @@ function edit_product()
 	}
 	function edit_content()
 	{
-		$id = $this->uri->segment(3);
+	 $this->form_validation->set_rules('menu','menu','trim|required');	
+         if ($this->form_validation->run() == FALSE) // validation hasn'\t been passed
+		{
+			echo "validation error";
+		}
+		else // passed validation proceed to post success logic
+		{
+                                
+                                $id = $this->uri->segment(3);
 		$this->content_model->edit_content($id);
 		
 		redirect ("admin/edit/$id");
+                }
 	}
 	
 	function edit_product_content()
@@ -166,37 +175,25 @@ function edit_practice_submit()
 		$this->practice_model->edit_practice($id);
 		redirect ("admin/edit_practice/$id");
 	}
-function submit_news()
+function submit_content()
 	{			
-		$this->form_validation->set_rules('news_title','Title','max_length[255]');			
-		$this->form_validation->set_rules('news_content','Content','max_length[1024]');
-		$this->form_validation->set_rules('page_type','Page Type','max_length[11]');
+		$this->form_validation->set_rules('title','Title','trim|max_length[255]');			
+		$this->form_validation->set_rules('content','Content','trim');
+                                $this->form_validation->set_rules('menu','menu','trim|required');
+		$this->form_validation->set_rules('category','Page Type','trim|max_length[11]');
 		$this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
 	
 		if ($this->form_validation->run() == FALSE) // validation hasn'\t been passed
 		{
-			$this->load->view('myform_view', $data);
+			echo "validation error";
 		}
 		else // passed validation proceed to post success logic
 		{
-		 	// build array for the model
-			$name = "".$this->session->userdata('firstname')." ".$this->session->userdata('lastname')."";
-			$format = 'DATE_RFC1123';
-			$now = time();
-			$datetime = standard_date($format, $now);
-			$form_data = array(
-					       	'news_title' => set_value('news_title'),
-					       	'news_content' =>  $this->input->post('news_content'),
-							'page_type' => set_value('page_type'),
-							'added_by' => $name,
-							'date_added' => $datetime
-						);
-					
-			// run insert model to write data to db
+		 	
 		
-			if ($this->news_model->SaveForm($form_data) == TRUE) // the information has therefore been successfully saved in the db
+			if ($this->content_model->add_content()) // the information has therefore been successfully saved in the db
 			{
-				redirect('/news');   // or whatever logic needs to occur
+				redirect('/admin');   // or whatever logic needs to occur
 			}
 			else
 			{
@@ -355,6 +352,24 @@ function delete_assigned_practice($id)
 			else $this->load->view('upload');
 	}
 	
+        function add_content()
+        {
+            $data['main_content'] = "admin/add_content";
+		$data['pages'] = $this->content_model->get_all_content();
+			
+		$this->load->vars($data);
+		$this->load->view('template/main');
+        }
+        
+          function add_seo_content()
+        {
+            $data['main_content'] = "admin/add_content";
+            $data['seo_links'] = $this->content_model->get_seo_links();
+		$data['pages'] = $this->content_model->get_all_content();
+		$data['category'] = "seo";	
+		$this->load->vars($data);
+		$this->load->view('template/main');
+        }
 	
 	
 	function is_logged_in()

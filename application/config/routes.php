@@ -44,10 +44,13 @@ $route['menu'] = 'menus/list_menus';
 $route['gallery'] = '/welcome/home';
 $route['events'] = '/welcome/home';
 $route['contact'] = '/welcome/home';
+$route['social'] = '/welcome/home';
+$route['jobs'] = '/welcome/home';
 $route['login'] = '/welcome/login';
-
-
-
+$route['charity'] = '/welcome/home';
+$route['services'] = '/welcome/home';
+$route['design'] = '/welcome/home';
+$route['print'] = '/welcome/home';
 $route['404_override'] = '';
 
 

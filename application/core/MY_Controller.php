@@ -35,7 +35,7 @@ class MY_Controller extends CI_Controller {
 			$currentyear = date('Y');
 			$age = $currentyear - $startdate;
 			$config_data['age'] = $age;
-			
+			$this->config_theme = $row->company_theme;
 			$this->config_email = $row->main_email;
 
 			$this->config_company_name = $row->company_name;
