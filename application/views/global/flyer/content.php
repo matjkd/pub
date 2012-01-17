@@ -23,6 +23,16 @@ else {
 
 <?php  $body = str_replace("FlyerDirect", "<strong>FlyerDirect</strong>", "$body");?>
 <?php  $body = str_replace("Flyer Direct", "<strong>Flyer Direct</strong>", "$body");?>
+
+<!--add image if set-->
+<?php if(isset($row->news_image) && $row->news_image != NULL) { ?> 
+<div style="float:left; width:300px; padding:10px 10px 0 0;">
+<img width="300px" src="<?=base_url()?>/images/template/flyerdirect/pics/<?=$row->news_image?>"  />
+<em><?php if(isset($row->caption)) { echo $row->caption; } ?></em>
+</div>
+
+<?php } ?>
+
 <?=$body?>
 
 <?php endforeach;?>

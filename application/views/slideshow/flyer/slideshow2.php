@@ -12,6 +12,6 @@
 
     <img height="32px;" style="float:left;"  src="<?= base_url() ?>images/template/flyerdirect/links/feng-sushi.png"/>
     
-    <img height="42px;" style="float:left;"  src="<?= base_url() ?>images/template/flyerdirect/links/dslogo.JPG"/>
+     <img height="32px;" style="float:left;"  src="<?= base_url() ?>images/template/flyerdirect/links/dslogo.JPG"/>
     </div>
 </div>

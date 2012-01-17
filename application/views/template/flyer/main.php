@@ -29,16 +29,26 @@
             <div style="clear:both"></div>
 
             <div id="menutop">
+                
+                
 
                 <div style="width:960px; margin:0 auto;">
-                    <div style="float:left;">
-                        <a href="http://mytrackpanel.com/trackit247/">Tracking</a>
+                 
+                       <div style="float: left;border: 0px solid #c3c3c3; width:203px; background: url(/images/backgrounds/redbutton.png) no-repeat;margin-left: 10px; text-align: center;">
+                        <a target="_blank" href="http://mytrackpanel.com/trackit247/">Tracking</a>
                     </div>
+                    
+                    
+                  
                     <?= $this->load->view('global/flyer/menu') ?>
                 </div> 
             </div>
+            <?php if (isset($slideshowtoggle) && $slideshowtoggle == "off") {
+                
+            } else { ?>
+                <?= $this->load->view('slideshow/flyer/slideshow') ?>
 
-            <?= $this->load->view('slideshow/flyer/slideshow') ?>
+            <?php } ?>
 
         </div>
         <div id="container">
@@ -59,7 +69,7 @@
 
                     <div class="grid_6">
 
-<?= $this->load->view('sidebox/flyer') ?>
+                        <?= $this->load->view('sidebox/flyer') ?>
                     </div >
 
 
@@ -67,20 +77,20 @@
 
 
                     <div class="<?= $mainsize ?>">
-<?= $this->load->view('global/alert') ?>
+                        <?= $this->load->view('global/alert') ?>
                         <?= $this->load->view($main_content) ?>
 
 
                     </div>
 
-<?php if (isset($sidebox) && $sidebox != NULL) { ?>
+                    <?php if (isset($sidebox) && $sidebox != NULL) { ?>
                         <div class="grid_6">
 
-    <?= $this->load->view($sidebox) ?>
+                            <?= $this->load->view($sidebox) ?>
 
 
                         </div>
-<?php } ?>
+                    <?php } ?>
 
                     <div class="clear"></div>
                 </div>
@@ -88,11 +98,11 @@
             </div>
 
             <div class="container_24" id="footer">
-                <div class="grid_18">
-<?= $this->load->view('global/flyer/links') ?>
+                <div class="grid_19">
+                    <?= $this->load->view('global/flyer/links') ?>
                 </div>
-                <div class="grid_6">
-<?= $this->load->view('global/flyer/social_icons') ?>
+                <div class="grid_5">
+                    <?= $this->load->view('global/flyer/social_icons') ?>
                 </div>
             </div>
 
@@ -102,20 +112,20 @@
 
         <div  id="backfooter" >
             <div class="container_24" >
-                <div class="grid_14">
-<?= $this->load->view('global/flyer/seo_menu') ?>
+                <div class="grid_24">
+                    <?= $this->load->view('global/flyer/seo_menu') ?>
 
                 </div>
 
-                <div class="grid_10">
-<?= $this->load->view('global/flyer/footer_menu') ?>
+                <div class="grid_24">
+                    <?= $this->load->view('global/flyer/footer_menu') ?>
                 </div>
 
             </div>
         </div>
 
         <!--! end of #container -->
-<?= $this->load->view('template/flyer/footer') ?>
+        <?= $this->load->view('global/footer') ?>
 
     </body>
 </html>

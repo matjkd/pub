@@ -27,7 +27,8 @@ class Welcome extends MY_Controller {
 
 			$data['title'] = $row->title;
 			$data['sidebox'] = $row->sidebox;
-
+                                                $data['metatitle'] = $row->meta_title;
+                                                $data['meta_description'] = $row->meta_desc;
 		endforeach;
                                 $data['sidebar'] = "sidebox/side";
 		$data['main_content'] = "global/".$this->config_theme."/content";
@@ -43,7 +44,11 @@ class Welcome extends MY_Controller {
 		$this->load->vars($data);
 		$this->load->view('template/main');
 	}
-
+function test(){
+    $data['main_content'] = 'slideshow/slideshow';
+    $this->load->vars($data);
+    $this->load->view('template/main');
+}
         function home()
 	{
 
@@ -63,6 +68,7 @@ class Welcome extends MY_Controller {
 
 			$data['title'] = $row->title;
 			$data['sidebox'] = $row->sidebox;
+                         $data['metatitle'] = $row->meta_title;
 
 		endforeach;
                 $data['sidebar'] = "sidebox/side";
@@ -98,6 +104,7 @@ class Welcome extends MY_Controller {
 
 			$data['title'] = $row->title;
 			$data['sidebox'] = $row->sidebox;
+                          $data['metatitle'] = $row->meta_title;
 
 		endforeach;
 		$data['main_content'] = "global/".$this->config_theme."/content";

@@ -1,17 +1,17 @@
 <div style="margin-top:20px;">
-<div style="float:left; margin-right:50px">
+<div style="float:left; margin-right:20px">
     
-    <a href="<?=base_url()?>welcome/home/door2door"><img src="<?=base_url()?>images/template/flyerdirect/door2door.png" /></a>
+    <a href="<?=base_url()?>welcome/home/door2door"><img height="185px" src="<?=base_url()?>images/template/flyerdirect/door2door.png" /></a>
 </div>
 
-<div style="float:left; margin-right:50px">
+<div style="float:left; margin-right:20px">
     
-  <a href="<?=base_url()?>welcome/home/business2business"><img src="<?=base_url()?>images/template/flyerdirect/business2business.png" /></a>
+  <a href="<?=base_url()?>welcome/home/business2business"><img height="185px" src="<?=base_url()?>images/template/flyerdirect/business2business.png" /></a>
 </div>
 
 <div style="float:left;">
     
-  <a href="<?=base_url()?>welcome/home/hand2hand"><img src="<?=base_url()?>images/template/flyerdirect/hand2hand.png" /></a>
+  <a href="<?=base_url()?>welcome/home/hand2hand"><img height="185px" src="<?=base_url()?>images/template/flyerdirect/hand2hand.png" /></a>
 </div>
 </div>
 <div style="clear:both;">

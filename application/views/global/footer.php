@@ -3,7 +3,7 @@
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
    
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="<?=base_url()?>js/libs/jquery-1.5.0.js"%3E%3C/script%3E'))</script>
   
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
@@ -13,8 +13,9 @@
 
   <!-- scripts concatenated and minified via ant build script-->
     <script src="<?=base_url()?>js/wymeditor/jquery.wymeditor.min.js"></script>
-  <script src="<?=base_url()?>js/plugins.js"></script>
-      <script src="<?=base_url()?>js/script.js"></script>
+  <script src="<?=base_url()?>js/flyer/plugins.js"></script>
+     <script src="<?=base_url()?>js/datatables.js"></script>
+      <script src="<?=base_url()?>js/flyer/script.js"></script>
 
   <!-- end concatenated and minified scripts-->
   
@@ -24,18 +25,3 @@
     <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
   <![endif]-->
 
-
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-19623681-9']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
