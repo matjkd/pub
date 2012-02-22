@@ -61,13 +61,13 @@
                 <div id="textcontainer">
                     <?php
                     if (isset($sidebox) && $sidebox != NULL) {
-                        $mainsize = "grid_12";
+                        $mainsize = "grid_14";
                     } else {
-                        $mainsize = "grid_17";
+                        $mainsize = "grid_18";
                     }
                     ?>
 
-                    <div class="grid_6">
+                    <div class="grid_5">
 
                         <?= $this->load->view('sidebox/flyer') ?>
                     </div >
@@ -84,7 +84,7 @@
                     </div>
 
                     <?php if (isset($sidebox) && $sidebox != NULL) { ?>
-                        <div class="grid_6">
+                        <div class="grid_5">
 
                             <?= $this->load->view($sidebox) ?>
 
@@ -98,10 +98,10 @@
             </div>
 
             <div class="container_24" id="footer">
-                <div class="grid_19">
+                <div class="grid_20">
                     <?= $this->load->view('global/flyer/links') ?>
                 </div>
-                <div class="grid_5">
+                <div class="grid_4">
                     <?= $this->load->view('global/flyer/social_icons') ?>
                 </div>
             </div>

@@ -1,24 +1,24 @@
 <div  id="sidebox">
-    <img  id="opener" src="<?= base_url() ?>images/template/flyerdirect/quotebutton.png" />
+    <img  id="opener"  width="180px;" src="<?= base_url() ?>images/template/flyerdirect/quotebutton.png" />
 
-    <div style="float:left"> <a href="<?= base_url() ?>design"><img alt="Design" width="200px" src="<?= base_url() ?>images/template/flyerdirect/DESIGN-Button.jpg" /></a></div>
-  <div style="float:left">  <a href="<?= base_url() ?>print"><img alt="Print" width="200px" src="<?= base_url() ?>images/template/flyerdirect/PRINT-Button.jpg" /></a></div>
+    <div style="float:left"> <a href="<?= base_url() ?>design"><img alt="Design" width="180px" src="<?= base_url() ?>images/template/flyerdirect/DESIGN-Button.jpg" /></a></div>
+  <div style="float:left">  <a href="<?= base_url() ?>print"><img alt="Print" width="180px" src="<?= base_url() ?>images/template/flyerdirect/PRINT-Button.jpg" /></a></div>
 </div>
-<div style="width:200px; margin:0 auto;">
+<div style="width:180px; margin:0 0 0 15px; ">
     We Accept<br/>
-    <div style="float:left; margin-right:19px;">
+    <div style="float:left; margin-right:5px;">
         <img alt="we take visa" src="<?= base_url() ?>images/icons/payment/visa-curved-32px.png"/>
     </div>
-    <div style="float:left; margin-right:19px;">
+    <div style="float:left; margin-right:5px;">
         <img alt="we take mastercard" src="<?= base_url() ?>images/icons/payment/mastercard-curved-32px.png"/>
     </div>
     <div style="float:left; margin-right:0px;">
         <img alt="we take delta" src="<?= base_url() ?>images/icons/payment/delta-curved-32px.png"/>
     </div>
-    <div style="float:left; margin-right:19px;">
+    <div style="float:left; margin-right:5px;">
         <img alt="we take maestro" src="<?= base_url() ?>images/icons/payment/maestro-curved-32px.png"/>
     </div>
-    <div style="float:left; margin-right:19px;">
+    <div style="float:left; margin-right:5px;">
         <img alt="we take solo" src="<?= base_url() ?>images/icons/payment/solo-curved-32px.png"/>
     </div>
     <div style="float:left; margin-right:0px;">
