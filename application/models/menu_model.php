@@ -33,7 +33,8 @@ class Menu_model extends CI_Model {
 			'startdate' => $this->input->post('startdate_unix'),
 			'enddate' => $this->input->post('enddate_unix'),
 			'menu' => $this->input->post('content'),
-              	'published' => $this->input->post('published')
+              	'published' => $this->input->post('published'),
+            	'dates' => $this->input->post('dates')
 
 
 		);
@@ -45,6 +46,7 @@ class Menu_model extends CI_Model {
     }
     function get_menus()
     {
+        
 $this->db->order_by('order', 'asc');
 		$query = $this->db->get('menus');
 		if($query->num_rows > 0);
