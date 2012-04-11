@@ -18,7 +18,7 @@
 
             <div id="logo" class="container_24">
                 <div class="grid_18">
-                    <img src="/images/template/flyerdirect/logo.png" width="188" height="66"/>
+                    <img alt="Leaflet Distribution, Flyer Delivery, FlyerDirect London" src="/images/template/flyerdirect/logo.png" width="188" height="66"/>
                 </div>
 
                 <div class="grid_6">

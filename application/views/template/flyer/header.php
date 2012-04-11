@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 
 <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
-     Remove this if you use the .htaccess -->
+     Removee this if you use the .htaccess -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 <title><?php if (isset($metatitle) && $metatitle != NULL) {
@@ -13,8 +13,15 @@
         echo "FlyerDirect";
     }
 } ?></title>
+
 <meta name="description" content="<?php if (isset($meta_description) && $meta_description != NULL) {
     echo $meta_description;
+} else {
+    
+} ?>">
+
+<meta name="keywords" content="<?php if (isset($meta_keywords) && $meta_keywords != NULL) {
+    echo $meta_keywords;
 } else {
     
 } ?>">

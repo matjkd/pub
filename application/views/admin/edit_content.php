@@ -15,6 +15,10 @@ Meta Description<br/>
 <textarea  cols=65 rows=2 name="meta_desc"><?=$row->meta_desc?></textarea>
 <br/>
 
+Meta Keywords<br/>
+<textarea  cols=65 rows=2 name="meta_keywords"><?=$row->meta_keywords?></textarea>
+<br/>
+
 Meta Title<br/>
 <textarea  cols=65 rows=2 name="meta_title"><?=$row->meta_title?></textarea>
 <br/>
